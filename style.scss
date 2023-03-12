@@ -1,0 +1,61 @@
+$card-width: 100px;
+$card-height: 150px;
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto 0;
+  width: $card-width * 4;
+  
+  .card {
+    background-color: gray;
+    border: 2px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: $card-height;
+    margin: 10px;
+    width: $card-width;
+    
+    &.flipped {
+      background-color: var(--color);
+      transform: rotateY(180deg);
+    }
+    
+    &.matched {
+      border: 2px solid var(--color);
+    }
+  }
+}
+
+.scoreboard {
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  margin: 50px auto;
+  width: $card-width * 4;
+  
+  div {
+    flex: 1;
+    text-align: center;
+    
+    &.player1 {
+      color: red;
+    }
+    
+    &.player2 {
+      color: blue;
+    }
+    
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.reset-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
